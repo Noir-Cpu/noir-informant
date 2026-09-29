@@ -11,6 +11,9 @@ jobs:
       - uses: actions/setup-node@v7
         with: { node-version: 22, cache: npm }
       - run: npm ci
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: python -m unittest discover -s collector/tests -t .
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
