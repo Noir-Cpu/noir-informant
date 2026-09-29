@@ -1,7 +1,7 @@
 {
   "case": "003",
   "codename": "INFORMANT",
-  "status": "collecting",
-  "liveUrl": null,
+  "status": "live",
+  "liveUrl": "https://noir-informant.noir-cpu.workers.dev",
   "stack": ["python", "github-actions", "cloudflare-workers", "neon"]
 }

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-09-29T19:42:37Z",
+  "model": "elo-v1",
+  "results_through": "2026-09-20",
+  "matches_in_history": 7719,
+  "params": {
+    "k": 20,
+    "home_adv": 70,
+    "draw_c": 0.65,
+    "regress": 0.25,
+    "newcomer": 1450.0
+  }
+}

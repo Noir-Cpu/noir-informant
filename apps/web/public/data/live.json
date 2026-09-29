@@ -1,0 +1,13 @@
+{
+  "scored": 0,
+  "rps": null,
+  "log_loss": null,
+  "brier": null,
+  "ece": null,
+  "bookmaker_rps_same_matches": null,
+  "model_rps_same_matches": null,
+  "reliability": [],
+  "predicted": 0,
+  "skipped_late": 0,
+  "chain_head": "0000000000000000000000000000000000000000000000000000000000000000"
+}

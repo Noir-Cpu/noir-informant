@@ -1,0 +1,7 @@
+name = "noir-informant"
+compatibility_date = "2025-01-01"
+
+# Static site only: the Python jobs write JSON into apps/web/public/data, Vite copies it into dist.
+[assets]
+directory = "apps/web/dist"
+not_found_handling = "404-page"

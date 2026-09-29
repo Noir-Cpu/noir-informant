@@ -1,4 +1,4 @@
-name: Collect
+name: Collect and predict
 on:
   schedule:
     - cron: "17 */6 * * *"
@@ -12,22 +12,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  collect:
+  run:
     runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
       - run: python -m unittest discover -s collector/tests -t .
+      - run: python -m unittest discover -s informant/tests -t .
+      - run: python -m informant.verify
       - run: python -m collector.run
-      - name: Commit new data
+      # Predictions are written after fresh data is stored, and only for matches more than 2 hours from kickoff.
+      - run: python -m informant.predict
+      - run: python -m informant.verify
+      - run: python -m informant.evaluate
+      - name: Commit new data and predictions
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add data predictions apps/web/public/data
           if git diff --cached --quiet; then
             echo "no changes"
           else
             git commit -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
           fi
+      - name: Deploy site
+        if: env.CLOUDFLARE_API_TOKEN != ''
+        run: |
+          npm ci
+          npm run deploy

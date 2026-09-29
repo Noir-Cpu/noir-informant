@@ -1,5 +1,5 @@
 {
-  "name": "noir-template",
+  "name": "noir-informant",
   "private": true,
   "type": "module",
   "workspaces": [
@@ -7,23 +7,19 @@
     "packages/*"
   ],
   "scripts": {
-    "dev:api": "npm run dev -w @noir/api",
-    "dev:web": "npm run dev -w @noir/web",
+    "dev": "npm run dev -w @noir/web",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present",
     "build": "npm run build --workspaces --if-present",
-    "e2e": "playwright test"
+    "e2e": "playwright test",
+    "deploy": "npm run build && wrangler deploy"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.63.0",
-    "drizzle-orm": "^0.45.3",
-    "typescript": "^5.6.0"
+    "typescript": "^5.6.0",
+    "wrangler": "^4.143.1"
   },
   "overrides": {
-    "undici": "^7.30.0",
-    "@esbuild-kit/core-utils": {
-      "esbuild": "^0.25.0"
-    }
+    "undici": "^7.30.0"
   }
 }
