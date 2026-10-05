@@ -19,6 +19,7 @@ FIRST_SEASON_START = 2016  # 2016/17
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 MANIFEST = DATA / "manifest.json"
+LAST_CHECKED = DATA / "last_checked.json"
 
 
 def season_code(start_year: int) -> str:
@@ -105,6 +106,10 @@ def main() -> int:
         print(f"::error::fixtures: {err}", file=sys.stderr)
 
     MANIFEST.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+    # The manifest only records when a file last CHANGED. Freshness checks need when we last looked,
+    # so a quiet stretch with no new matches is not mistaken for a dead collector. Written only on a clean run.
+    if not failures:
+        LAST_CHECKED.write_text(json.dumps({"checked_at": stamp}, indent=2) + "\n")
     return 1 if failures else 0
 
 
