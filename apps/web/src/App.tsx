@@ -1,11 +1,27 @@
 import { ReliabilityDiagram, RpsBySeason } from "./charts";
-import { useData, type Upcoming } from "./data";
+import { useData, type Backtest, type Reliability, type Upcoming } from "./data";
+import { Footer, Header, REPO, Shell } from "./Shell";
 
 const pct = (x: number) => `${(x * 100).toFixed(0)}%`;
 const fmt = (n: number | null | undefined, d = 4) => (n == null ? "n/a" : n.toFixed(d));
 const when = (iso: string) => new Date(iso).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short", timeZone: "UTC" }) + " UTC";
 const seasonLabel = (s: string) => `20${s.slice(0, 2)}/${s.slice(2)}`;
-const REPO = "https://github.com/Noir-Cpu/noir-informant";
+
+// Plain-language reading of each chart, computed from the data so it never drifts from the picture.
+function rpsSummary(bt: Backtest) {
+  const rows = bt.test_seasons.map((s) => ({ s, elo: bt.by_season[s]!.elo.rps, book: bt.by_season[s]!.bookmaker.rps }));
+  const worse = rows.filter((r) => r.elo > r.book).length;
+  const lo = rows.reduce((a, b) => (b.elo < a.elo ? b : a)), hi = rows.reduce((a, b) => (b.elo > a.elo ? b : a));
+  return `Elo's RPS runs from ${fmt(lo.elo)} (${seasonLabel(lo.s)}) to ${fmt(hi.elo)} (${seasonLabel(hi.s)}). It is worse than the bookmaker in ${worse} of ${rows.length} seasons.`;
+}
+function reliabilitySummary(bins: Reliability) {
+  if (bins.length === 0) return "No calibration data yet.";
+  // Ignore bins with very few forecasts: one lucky outcome in a bin of four says nothing.
+  const MIN = 100;
+  const big = bins.filter((b) => b.n >= MIN);
+  const w = (big.length ? big : bins).reduce((a, b) => (Math.abs(b.mean_p - b.freq) > Math.abs(a.mean_p - a.freq) ? b : a));
+  return `Points on the dashed diagonal are perfectly calibrated. Among bins with at least ${MIN} forecasts the largest miss is ${pct(w.lo)} to ${pct(w.hi)}: forecast ${(w.mean_p * 100).toFixed(1)}%, observed ${(w.freq * 100).toFixed(1)}% (${w.n} forecasts).`;
+}
 
 function Prediction({ p }: { p: Upcoming }) {
   return (
@@ -25,21 +41,32 @@ function Prediction({ p }: { p: Upcoming }) {
 
 export function App() {
   const { data, error } = useData();
-  if (error) return <main><p className="meta">Could not load data: {error}</p></main>;
-  if (!data) return <main><p className="meta">Loading…</p></main>;
+  // The loading state is exactly the prerendered shell, so hydration matches and nothing shifts when data arrives.
+  if (!data && !error) return <Shell />;
+  if (!data) {
+    return (
+      <>
+        <Header />
+        <main id="main"><p className="meta" role="alert">Could not load the latest data ({error}). Reload to try again; the same numbers are in <a href="/data/backtest.json">/data/backtest.json</a>.</p></main>
+        <Footer />
+      </>
+    );
+  }
   const { backtest: bt, live, meta, upcoming } = data;
   const elo = bt.models.elo, book = bt.models.bookmaker, prior = bt.models.home_prior;
   const gap = elo.rps_minus_bookmaker!;
 
   return (
-    <main>
-      <p className="meta">[ 003 ] CASE / INFORMANT</p>
-      <h1>Informant</h1>
-      <p className="verdict">
-        Match forecasts for the Premier League and La Liga, published before kickoff and hash-chained so nobody, including me, can
-        edit them afterwards. The model is a plain Elo baseline and it does <em>not</em> beat the bookmakers.
-      </p>
-      <p className="meta">Results through {meta.results_through} · built {when(meta.generated_at)} · <a href={REPO}>source</a></p>
+    <>
+      <Header />
+      <nav aria-label="On this page" className="toc">
+        <a href="#live">Live record</a>
+        <a href="#backtest">Backtest evidence</a>
+        <a href="#method">Method</a>
+        <a href="#limits">Limits</a>
+      </nav>
+      <main id="main">
+      <p className="meta">Results through {meta.results_through} · built {when(meta.generated_at)} · <a href={REPO}>source on GitHub</a></p>
 
       <section aria-labelledby="live">
         <h2 id="live">Live record</h2>
@@ -61,7 +88,7 @@ export function App() {
         {upcoming.length === 0 ? (
           <p>No upcoming predictions yet. The source lists fixtures only a few days ahead, so predictions appear as matchdays approach. Each is published at least 2 hours before kickoff, or skipped and counted above.</p>
         ) : (
-          <div className="scroll">
+          <div className="scroll" tabIndex={0} role="region" aria-label="Upcoming predictions table, scrolls sideways on narrow screens">
             <table>
               <caption className="sr">Published predictions for upcoming matches</caption>
               <thead><tr><th>Match</th><th>Home</th><th>Draw</th><th>Away</th><th>Bookmaker H / D / A</th><th>Published</th></tr></thead>
@@ -89,10 +116,12 @@ export function App() {
         </p>
 
         <figure>
-          <figcaption>Mean RPS by season (lower is better)</figcaption>
-          <RpsBySeason bt={bt} />
+          <figcaption id="cap-rps">Mean RPS by season (lower is better)</figcaption>
+          <RpsBySeason bt={bt} labelledBy="cap-rps" describedBy="sum-rps" />
+          <p id="sum-rps" className="chart-summary">{rpsSummary(bt)}</p>
           <details>
-            <summary>Table view</summary>
+            <summary>Table view of this chart</summary>
+            <div className="scroll" tabIndex={0} role="region" aria-label="Mean RPS by season table">
             <table>
               <thead><tr><th>Season</th><th>Matches</th><th>Elo</th><th>Bookmaker</th><th>Home prior</th></tr></thead>
               <tbody>
@@ -104,14 +133,17 @@ export function App() {
                 ))}
               </tbody>
             </table>
+            </div>
           </details>
         </figure>
 
         <figure>
-          <figcaption>Calibration of the Elo forecasts (expected calibration error {fmt(elo.ece)})</figcaption>
-          <ReliabilityDiagram bins={elo.reliability} />
+          <figcaption id="cap-rel">Calibration of the Elo forecasts (expected calibration error {fmt(elo.ece)})</figcaption>
+          <ReliabilityDiagram bins={elo.reliability} labelledBy="cap-rel" describedBy="sum-rel" />
+          <p id="sum-rel" className="chart-summary">{reliabilitySummary(elo.reliability)}</p>
           <details>
-            <summary>Table view</summary>
+            <summary>Table view of this chart</summary>
+            <div className="scroll" tabIndex={0} role="region" aria-label="Calibration table">
             <table>
               <thead><tr><th>Forecast range</th><th>Forecasts</th><th>Mean forecast</th><th>Observed</th></tr></thead>
               <tbody>
@@ -120,6 +152,7 @@ export function App() {
                 ))}
               </tbody>
             </table>
+            </div>
           </details>
         </figure>
       </section>
@@ -132,7 +165,10 @@ export function App() {
           <li>A prediction is written to <a href={`${REPO}/blob/main/predictions/ledger.jsonl`}>the ledger</a> only if there are at least 2 hours to kickoff. It is never rewritten. Each record contains the hash of the one before it.</li>
           <li>Verify the chain yourself: clone the repo and run <code>python -m informant.verify</code>.</li>
         </ol>
-        <h2>Limits</h2>
+      </section>
+
+      <section aria-labelledby="limits">
+        <h2 id="limits">Limits</h2>
         <ul>
           <li>Bookmaker probabilities use Bet365 odds from the same source with the margin removed proportionally. The source does not say exactly when those odds were captured, so the bookmaker baseline may include late information that a real pre-kickoff forecast would not have.</li>
           <li>Kickoff times are read as UK local time, as the source lists them. Where no time is given, 00:00 is assumed, which only makes the 2-hour rule stricter.</li>
@@ -141,7 +177,8 @@ export function App() {
           <li>Nothing here is betting advice.</li>
         </ul>
       </section>
-      <footer className="meta">Part of the NOIR portfolio by John Balogun · data from football-data.co.uk</footer>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -3,16 +3,21 @@ on:
   push:
     branches: [main]
   pull_request:
+# Read-only by default; this workflow runs on pull requests, including ones from forks.
+permissions:
+  contents: read
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
-        with: { fetch-depth: 2 }
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with: { fetch-depth: 2, persist-credentials: false }
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with: { node-version: 22, cache: npm }
       - run: npm ci
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7
         with: { python-version: "3.12" }
       - run: python -m unittest discover -s collector/tests -t .
       - run: python -m unittest discover -s informant/tests -t .
@@ -23,21 +28,25 @@ jobs:
       - run: npm run build
   gitleaks:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: { contents: read, pull-requests: read }
     steps:
-      - uses: actions/checkout@v7
-        with: { fetch-depth: 0 }
-      - uses: gitleaks/gitleaks-action@v3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with: { fetch-depth: 0, persist-credentials: false }
+      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3
         env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
   e2e:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with: { persist-credentials: false }
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with: { node-version: 22, cache: npm }
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run e2e
-      - uses: actions/upload-artifact@v7
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         if: failure()
         with:
           name: playwright-report

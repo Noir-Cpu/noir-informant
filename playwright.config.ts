@@ -7,6 +7,8 @@ export default defineConfig({
   projects: [
     { name: "desktop", use: { ...devices["Desktop Chrome"] } },
     { name: "phone", use: { ...devices["Pixel 7"] } },
+    // The narrowest width WCAG 1.4.10 (reflow) asks for.
+    { name: "narrow", use: { ...devices["Pixel 7"], viewport: { width: 320, height: 640 } } },
   ],
   webServer: {
     command: "npm run build -w @noir/web && npm run preview -w @noir/web -- --port 4173",
