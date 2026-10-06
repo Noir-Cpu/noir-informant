@@ -28,9 +28,11 @@ const get = <T,>(name: string) => fetch(`/data/${name}.json`).then((r) => {
 export function useData(): { data?: Data; error?: string } {
   const [state, set] = useState<{ data?: Data; error?: string }>({});
   useEffect(() => {
+    let live = true;
     Promise.all([get<Upcoming[]>("upcoming"), get<Backtest>("backtest"), get<Live>("live"), get<Meta>("meta")])
-      .then(([upcoming, backtest, live, meta]) => set({ data: { upcoming, backtest, live, meta } }))
-      .catch((e) => set({ error: String(e) }));
+      .then(([upcoming, backtest, liveRecord, meta]) => live && set({ data: { upcoming, backtest, live: liveRecord, meta } }))
+      .catch((e) => live && set({ error: String(e) }));
+    return () => { live = false; };
   }, []);
   return state;
 }

@@ -1,13 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>INFORMANT — John Balogun, NOIR</title>
-    <meta name="description" content="Premier League and La Liga forecasts published before kickoff, hash-chained so they cannot be edited, with an honest backtest against the bookmakers." />
+    <title>Informant: Football Forecasts | John Balogun, NOIR</title>
+    <meta name="description" content="Premier League and La Liga match forecasts published before kickoff and hash-chained so they cannot be edited, with an honest backtest against the bookmakers." />
+    <link rel="canonical" href="%SITE_URL%" />
+    <meta name="author" content="John Balogun" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#efebe2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#110f0d" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Informant by John Balogun, NOIR" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="Informant: Football Forecasts | John Balogun, NOIR" />
+    <meta property="og:description" content="Premier League and La Liga forecasts published before kickoff, hash-chained so they cannot be edited, with an honest backtest against the bookmakers." />
+    <meta property="og:url" content="%SITE_URL%" />
+    <meta property="og:image" content="%SITE_URL%og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="INFORMANT. Football forecasts published before kickoff, by John Balogun, NOIR." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Informant: Football Forecasts | John Balogun, NOIR" />
+    <meta name="twitter:description" content="Premier League and La Liga forecasts published before kickoff, hash-chained so they cannot be edited, with an honest backtest against the bookmakers." />
+    <meta name="twitter:image" content="%SITE_URL%og.png" />
+    <meta name="twitter:image:alt" content="INFORMANT. Football forecasts published before kickoff, by John Balogun, NOIR." />
+
+    <!-- Start the four data requests with the document, before the script has run. -->
+    <link rel="preload" as="fetch" href="/data/upcoming.json" crossorigin="anonymous" />
+    <link rel="preload" as="fetch" href="/data/backtest.json" crossorigin="anonymous" />
+    <link rel="preload" as="fetch" href="/data/live.json" crossorigin="anonymous" />
+    <link rel="preload" as="fetch" href="/data/meta.json" crossorigin="anonymous" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"><!--shell--></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
