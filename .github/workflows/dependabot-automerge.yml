@@ -16,7 +16,9 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       # Merges only after the required status checks pass (see the branch ruleset).
-      - if: steps.meta.outputs.update-type != 'version-update:semver-major'
+      # npm only. GitHub Actions updates are reviewed by hand: with actions pinned to commit hashes, an auto-merged
+      # update is a supply-chain risk.
+      - if: steps.meta.outputs.package-ecosystem == 'npm_and_yarn' && steps.meta.outputs.update-type != 'version-update:semver-major'
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
