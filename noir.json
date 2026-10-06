@@ -3,5 +3,5 @@
   "codename": "INFORMANT",
   "status": "live",
   "liveUrl": "https://noir-informant.noir-cpu.workers.dev",
-  "stack": ["python", "github-actions", "cloudflare-workers", "neon"]
+  "stack": ["python", "github-actions", "cloudflare-workers"]
 }
