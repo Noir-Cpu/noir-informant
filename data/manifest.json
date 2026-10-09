@@ -1,4 +1,14 @@
 {
+  "fixtures/E0.csv": {
+    "fetched_at": "2026-10-09T13:14:24Z",
+    "rows": 10,
+    "sha256": "849cb089fe632ba34e8269d80c82acb72c9bc0ee87ac857704a1afce3553caaa"
+  },
+  "fixtures/SP1.csv": {
+    "fetched_at": "2026-10-09T13:14:24Z",
+    "rows": 10,
+    "sha256": "b5b4adf7e6dd81abf8db947055bb756a1ac895fca7ba1136e654b6ed76525806"
+  },
   "results/E0/1617.csv": {
     "fetched_at": "2026-09-29T19:07:09Z",
     "rows": 380,

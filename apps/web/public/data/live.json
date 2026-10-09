@@ -7,7 +7,7 @@
   "bookmaker_rps_same_matches": null,
   "model_rps_same_matches": null,
   "reliability": [],
-  "predicted": 0,
+  "predicted": 20,
   "skipped_late": 0,
-  "chain_head": "0000000000000000000000000000000000000000000000000000000000000000"
+  "chain_head": "4e1c17f33edefb53669b1605a2a6153d938a59ad7411b215fdc137701c6e0003"
 }
