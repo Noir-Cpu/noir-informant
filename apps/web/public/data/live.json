@@ -1,12 +1,69 @@
 {
-  "scored": 0,
-  "rps": null,
-  "log_loss": null,
-  "brier": null,
-  "ece": null,
-  "bookmaker_rps_same_matches": null,
-  "model_rps_same_matches": null,
-  "reliability": [],
+  "scored": 19,
+  "rps": 0.16286,
+  "log_loss": 0.93609,
+  "brier": 0.55899,
+  "ece": 0.11218,
+  "bookmaker_rps_same_matches": 0.15349,
+  "model_rps_same_matches": 0.16286,
+  "reliability": [
+    {
+      "lo": 0.0,
+      "hi": 0.1,
+      "n": 1,
+      "mean_p": 0.0605,
+      "freq": 0.0
+    },
+    {
+      "lo": 0.1,
+      "hi": 0.2,
+      "n": 5,
+      "mean_p": 0.134,
+      "freq": 0.0
+    },
+    {
+      "lo": 0.2,
+      "hi": 0.3,
+      "n": 12,
+      "mean_p": 0.2562,
+      "freq": 0.0833
+    },
+    {
+      "lo": 0.3,
+      "hi": 0.4,
+      "n": 26,
+      "mean_p": 0.3248,
+      "freq": 0.4231
+    },
+    {
+      "lo": 0.4,
+      "hi": 0.5,
+      "n": 8,
+      "mean_p": 0.4241,
+      "freq": 0.375
+    },
+    {
+      "lo": 0.5,
+      "hi": 0.6,
+      "n": 1,
+      "mean_p": 0.5918,
+      "freq": 1.0
+    },
+    {
+      "lo": 0.6,
+      "hi": 0.7,
+      "n": 3,
+      "mean_p": 0.6522,
+      "freq": 0.6667
+    },
+    {
+      "lo": 0.8,
+      "hi": 0.9,
+      "n": 1,
+      "mean_p": 0.8089,
+      "freq": 1.0
+    }
+  ],
   "predicted": 20,
   "skipped_late": 0,
   "chain_head": "4e1c17f33edefb53669b1605a2a6153d938a59ad7411b215fdc137701c6e0003"

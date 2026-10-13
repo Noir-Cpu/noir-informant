@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-12T15:20:18Z",
+  "generated_at": "2026-10-13T00:37:44Z",
   "model": "elo-v1",
-  "results_through": "2026-09-20",
-  "matches_in_history": 7719,
+  "results_through": "2026-10-12",
+  "matches_in_history": 7738,
   "params": {
     "k": 20,
     "home_adv": 70,

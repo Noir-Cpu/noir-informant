@@ -60,9 +60,9 @@
     "sha256": "b732e3d3bc7e361038d849168d2e9012f4a48a2deba62a8c35bfb76a98a207a7"
   },
   "results/E0/2627.csv": {
-    "fetched_at": "2026-09-29T19:07:09Z",
-    "rows": 50,
-    "sha256": "3024508e9d0236c9aaea42d0bc536acb62abbd52485b3b7a449a69f4577c6608"
+    "fetched_at": "2026-10-13T00:37:41Z",
+    "rows": 60,
+    "sha256": "5e494c095176cd9a7f8891ba7d10c16d02f15001da95517b7f29a0cca908d66a"
   },
   "results/SP1/1617.csv": {
     "fetched_at": "2026-09-29T19:07:09Z",
@@ -115,8 +115,8 @@
     "sha256": "f98617a3cd98c6a08cd91cf78bc236aabb14d4c946f8611171956aaf66e1bdfc"
   },
   "results/SP1/2627.csv": {
-    "fetched_at": "2026-09-29T19:07:09Z",
-    "rows": 69,
-    "sha256": "d72a9de12b31665ea71c57221ea3b86cfda7c75950bd777d58acb2a1e6bc0dfe"
+    "fetched_at": "2026-10-13T00:37:41Z",
+    "rows": 78,
+    "sha256": "be26c2b4b707c39704852466682841d1597df6a2b2fcf36a65ee3499122be376"
   }
 }
