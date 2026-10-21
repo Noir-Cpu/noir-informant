@@ -18,25 +18,5 @@
     "published_at": "2026-10-09T13:14:27Z",
     "hash": "5809ad0a01e8d3ffc38be3e1e7c9a56909054f383283b9f13fde0655c9c77fdc",
     "seq": 11
-  },
-  {
-    "division": "SP1",
-    "date": "2026-10-21",
-    "kickoff_utc": "2026-10-21T18:00:00Z",
-    "home": "Levante",
-    "away": "Ath Bilbao",
-    "probs": [
-      0.396781,
-      0.31027,
-      0.292949
-    ],
-    "book": [
-      0.281466,
-      0.273424,
-      0.445109
-    ],
-    "published_at": "2026-10-20T11:33:20Z",
-    "hash": "579b1105868e38a2177a7595a33837c3c456309980dda94e834e7f5452c79c3a",
-    "seq": 40
   }
 ]
