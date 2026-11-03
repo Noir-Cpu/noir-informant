@@ -18,45 +18,5 @@
     "published_at": "2026-10-09T13:14:27Z",
     "hash": "5809ad0a01e8d3ffc38be3e1e7c9a56909054f383283b9f13fde0655c9c77fdc",
     "seq": 11
-  },
-  {
-    "division": "E0",
-    "date": "2026-11-02",
-    "kickoff_utc": "2026-11-02T20:00:00Z",
-    "home": "Newcastle",
-    "away": "Everton",
-    "probs": [
-      0.462524,
-      0.296953,
-      0.240523
-    ],
-    "book": [
-      0.412574,
-      0.27112,
-      0.316306
-    ],
-    "published_at": "2026-10-30T12:51:56Z",
-    "hash": "48b6352c41803eb17c0919a8fede19de4da76427a960df9c88520c899a92cc96",
-    "seq": 68
-  },
-  {
-    "division": "SP1",
-    "date": "2026-11-02",
-    "kickoff_utc": "2026-11-02T20:00:00Z",
-    "home": "La Coruna",
-    "away": "Osasuna",
-    "probs": [
-      0.495687,
-      0.28723,
-      0.217083
-    ],
-    "book": [
-      0.445205,
-      0.287671,
-      0.267123
-    ],
-    "published_at": "2026-10-30T12:51:56Z",
-    "hash": "a4dfe7010ab14fb34da20a94d2d617f53a24aa50411932f27eba27d680672500",
-    "seq": 78
   }
 ]

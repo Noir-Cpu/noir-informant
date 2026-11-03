@@ -60,9 +60,9 @@
     "sha256": "b732e3d3bc7e361038d849168d2e9012f4a48a2deba62a8c35bfb76a98a207a7"
   },
   "results/E0/2627.csv": {
-    "fetched_at": "2026-11-02T15:46:11Z",
-    "rows": 89,
-    "sha256": "d13e9515f7b13a52d91daf409e48f4aca28793bfc9870e51164e54580e3db824"
+    "fetched_at": "2026-11-03T14:09:38Z",
+    "rows": 90,
+    "sha256": "2dfe34a5ce28425f9a213d142c26279fb0d4f14d91231fff8e3eb53f6ef9be61"
   },
   "results/SP1/1617.csv": {
     "fetched_at": "2026-09-29T19:07:09Z",
@@ -115,8 +115,8 @@
     "sha256": "f98617a3cd98c6a08cd91cf78bc236aabb14d4c946f8611171956aaf66e1bdfc"
   },
   "results/SP1/2627.csv": {
-    "fetched_at": "2026-11-02T15:46:11Z",
-    "rows": 108,
-    "sha256": "9ef209b2d28e20e4983a0cb30470cf5812497855cabbc47191af754849b8496d"
+    "fetched_at": "2026-11-03T14:09:38Z",
+    "rows": 109,
+    "sha256": "c6c0e9579c8a72c9707515b31975a6961581ca3e1546c09d5be792898fe78891"
   }
 }

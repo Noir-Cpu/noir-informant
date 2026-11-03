@@ -1,11 +1,11 @@
 {
-  "scored": 76,
-  "rps": 0.20337,
-  "log_loss": 0.97712,
-  "brier": 0.57938,
-  "ece": 0.05611,
-  "bookmaker_rps_same_matches": 0.18638,
-  "model_rps_same_matches": 0.20337,
+  "scored": 78,
+  "rps": 0.20516,
+  "log_loss": 0.97933,
+  "brier": 0.58071,
+  "ece": 0.05503,
+  "bookmaker_rps_same_matches": 0.18812,
+  "model_rps_same_matches": 0.20516,
   "reliability": [
     {
       "lo": 0.0,
@@ -24,9 +24,9 @@
     {
       "lo": 0.2,
       "hi": 0.3,
-      "n": 72,
-      "mean_p": 0.2624,
-      "freq": 0.1944
+      "n": 76,
+      "mean_p": 0.2623,
+      "freq": 0.1974
     },
     {
       "lo": 0.3,
@@ -38,9 +38,9 @@
     {
       "lo": 0.4,
       "hi": 0.5,
-      "n": 32,
-      "mean_p": 0.4431,
-      "freq": 0.5312
+      "n": 34,
+      "mean_p": 0.4452,
+      "freq": 0.5294
     },
     {
       "lo": 0.5,
