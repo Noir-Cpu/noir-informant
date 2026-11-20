@@ -1,13 +1,13 @@
 {
   "fixtures/E0.csv": {
-    "fetched_at": "2026-11-06T19:22:53Z",
+    "fetched_at": "2026-11-20T20:13:31Z",
     "rows": 10,
-    "sha256": "f1d215da24ba03beb66b8c337fa89a5d72e34eb60ae8c30845a1c9c71d6b6733"
+    "sha256": "9de71a91104650eace31e65b3a676a4f9b256c388c897fdd544ee0817804446a"
   },
   "fixtures/SP1.csv": {
-    "fetched_at": "2026-11-06T19:22:53Z",
+    "fetched_at": "2026-11-20T20:13:31Z",
     "rows": 10,
-    "sha256": "39044e7724777bd2efd25b69cd49c9730db911974739ef8291620d1e6b707df0"
+    "sha256": "cb661f0f8dd0bb5102dc54c94eda9b82259f6b5bc728cdf78ab259216ff5db8c"
   },
   "results/E0/1617.csv": {
     "fetched_at": "2026-09-29T19:07:09Z",
