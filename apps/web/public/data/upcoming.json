@@ -18,45 +18,5 @@
     "published_at": "2026-10-09T13:14:27Z",
     "hash": "5809ad0a01e8d3ffc38be3e1e7c9a56909054f383283b9f13fde0655c9c77fdc",
     "seq": 11
-  },
-  {
-    "division": "E0",
-    "date": "2026-11-23",
-    "kickoff_utc": "2026-11-23T20:00:00Z",
-    "home": "Brentford",
-    "away": "Everton",
-    "probs": [
-      0.473213,
-      0.29402,
-      0.232768
-    ],
-    "book": [
-      0.441345,
-      0.271112,
-      0.287543
-    ],
-    "published_at": "2026-11-20T20:13:35Z",
-    "hash": "83dafe0b47037dd25fe2f8e220f9fdc62bb588ce9c765c5e2a8bd27f6dd5eb5b",
-    "seq": 106
-  },
-  {
-    "division": "SP1",
-    "date": "2026-11-23",
-    "kickoff_utc": "2026-11-23T20:00:00Z",
-    "home": "Levante",
-    "away": "Elche",
-    "probs": [
-      0.457601,
-      0.298237,
-      0.244162
-    ],
-    "book": [
-      0.442721,
-      0.264403,
-      0.292877
-    ],
-    "published_at": "2026-11-20T20:13:35Z",
-    "hash": "cb5b7e9e09f72bf55fcfa8225103d42197a42376e1d32c662dc882cb8553995e",
-    "seq": 115
   }
 ]
