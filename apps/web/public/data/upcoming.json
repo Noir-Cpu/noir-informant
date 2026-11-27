@@ -18,5 +18,365 @@
     "published_at": "2026-10-09T13:14:27Z",
     "hash": "5809ad0a01e8d3ffc38be3e1e7c9a56909054f383283b9f13fde0655c9c77fdc",
     "seq": 11
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T13:00:00Z",
+    "home": "Betis",
+    "away": "Vallecano",
+    "probs": [
+      0.605951,
+      0.243503,
+      0.150546
+    ],
+    "book": [
+      0.595576,
+      0.219796,
+      0.184628
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "ec914662cd4ecd669267e6c1465cc993701681815e41d820b997be6dccbbe8f9",
+    "seq": 125
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T15:00:00Z",
+    "home": "Leeds",
+    "away": "Coventry",
+    "probs": [
+      0.542646,
+      0.270563,
+      0.186791
+    ],
+    "book": [
+      0.637148,
+      0.217778,
+      0.145074
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "e1ec2d792b529ce7124980ac0b3ab93cec3f87edb11b669688b6228d99735d4c",
+    "seq": 116
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T15:00:00Z",
+    "home": "Man United",
+    "away": "Brentford",
+    "probs": [
+      0.388205,
+      0.311341,
+      0.300454
+    ],
+    "book": [
+      0.453278,
+      0.253835,
+      0.292887
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "219be89b4e64276572da58b916e5ff9c0e28978d7c6b0f6f98e81dad3202d9b8",
+    "seq": 117
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T15:15:00Z",
+    "home": "Malaga",
+    "away": "Ath Bilbao",
+    "probs": [
+      0.313026,
+      0.312715,
+      0.374259
+    ],
+    "book": [
+      0.199508,
+      0.25271,
+      0.547782
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "918e7f6dc78f91aa6f00c6cb91791d47b9d9fbc309321aed764f245e7e6aac68",
+    "seq": 126
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T17:30:00Z",
+    "home": "Ipswich",
+    "away": "Aston Villa",
+    "probs": [
+      0.242308,
+      0.29759,
+      0.460102
+    ],
+    "book": [
+      0.262732,
+      0.252223,
+      0.485044
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "b666e4579701b05d58446b88419b684c8fc587fe3be6a42102f13daccb2b8cc4",
+    "seq": 118
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T17:30:00Z",
+    "home": "Elche",
+    "away": "Ath Madrid",
+    "probs": [
+      0.195521,
+      0.275878,
+      0.528601
+    ],
+    "book": [
+      0.14596,
+      0.199735,
+      0.654305
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "54f93e6d2ca1b7be51ce1ccdb8f9b0bd1671312fa6181f257900c9e84a131d66",
+    "seq": 127
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-28",
+    "kickoff_utc": "2026-11-28T20:00:00Z",
+    "home": "Real Madrid",
+    "away": "Alaves",
+    "probs": [
+      0.774309,
+      0.152101,
+      0.07359
+    ],
+    "book": [
+      0.843584,
+      0.100342,
+      0.056074
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "123603d783abfde17ec3b0fa8f9c046136344467816ad467fbdc3630ba9333ad",
+    "seq": 128
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T12:00:00Z",
+    "home": "Everton",
+    "away": "Liverpool",
+    "probs": [
+      0.289446,
+      0.309704,
+      0.40085
+    ],
+    "book": [
+      0.210277,
+      0.249012,
+      0.540711
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "ca01971f7709910b9bfae591ba5e6191cdff8298f1647903ac41938d22456d73",
+    "seq": 119
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T13:00:00Z",
+    "home": "Valencia",
+    "away": "Osasuna",
+    "probs": [
+      0.488364,
+      0.289532,
+      0.222104
+    ],
+    "book": [
+      0.451728,
+      0.291886,
+      0.256386
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "13054ecf40de25746130093feb19c4ed3e142ddffba3ddf18020e7ac96e22fe1",
+    "seq": 129
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T14:05:00Z",
+    "home": "Brighton",
+    "away": "Newcastle",
+    "probs": [
+      0.57154,
+      0.258814,
+      0.169646
+    ],
+    "book": [
+      0.606819,
+      0.211713,
+      0.181468
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "328a66281f58479e7599bc6894bed3d9e62ac9f79f9e88c8d8f1fc5d50d11e05",
+    "seq": 120
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T14:05:00Z",
+    "home": "Crystal Palace",
+    "away": "Hull",
+    "probs": [
+      0.328921,
+      0.31374,
+      0.357339
+    ],
+    "book": [
+      0.499827,
+      0.256668,
+      0.243505
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "1e6848e05ef638f3b2911bb0c37c17a3a5af9d280779b436385e00f13b47b5f3",
+    "seq": 121
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T14:05:00Z",
+    "home": "Fulham",
+    "away": "Bournemouth",
+    "probs": [
+      0.32232,
+      0.313408,
+      0.364272
+    ],
+    "book": [
+      0.336872,
+      0.285831,
+      0.377297
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "e95dbece36ad1f8dc5420bb1b1add5250979b075e48e7408df73259f60e85849",
+    "seq": 122
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T14:05:00Z",
+    "home": "Sunderland",
+    "away": "Tottenham",
+    "probs": [
+      0.413234,
+      0.307758,
+      0.279008
+    ],
+    "book": [
+      0.253394,
+      0.271493,
+      0.475113
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "a71acf71f09f38fe2710bbc79811bdd62e5bd8b96f77ba76324502059b21068f",
+    "seq": 123
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T15:15:00Z",
+    "home": "La Coruna",
+    "away": "Barcelona",
+    "probs": [
+      0.113846,
+      0.20653,
+      0.679625
+    ],
+    "book": [
+      0.08596,
+      0.126074,
+      0.787966
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "d3af29bc6bcc2549b72fe0386786ee3fa14f5b60134ca1c2831d044850647141",
+    "seq": 130
+  },
+  {
+    "division": "E0",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T16:30:00Z",
+    "home": "Arsenal",
+    "away": "Man City",
+    "probs": [
+      0.512341,
+      0.281686,
+      0.205973
+    ],
+    "book": [
+      0.477077,
+      0.265043,
+      0.25788
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "2c932f5a3340d7dbc9b369f408b25c7d3fc50ee259163c58f608e946dceeac63",
+    "seq": 124
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T17:30:00Z",
+    "home": "Celta",
+    "away": "Villarreal",
+    "probs": [
+      0.335057,
+      0.313932,
+      0.35101
+    ],
+    "book": [
+      0.339728,
+      0.279776,
+      0.380496
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "47615b523cedec20013dff2ce0a29c1f1e79555bdbb530dbded2cc2cfb58f83c",
+    "seq": 131
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-29",
+    "kickoff_utc": "2026-11-29T20:00:00Z",
+    "home": "Sociedad",
+    "away": "Sevilla",
+    "probs": [
+      0.497603,
+      0.286614,
+      0.215783
+    ],
+    "book": [
+      0.445205,
+      0.267123,
+      0.287671
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "421727c6bde752d8088d6390e0be563af01774df567b07cc8f200d47000f141e",
+    "seq": 132
+  },
+  {
+    "division": "SP1",
+    "date": "2026-11-30",
+    "kickoff_utc": "2026-11-30T20:00:00Z",
+    "home": "Espanol",
+    "away": "Getafe",
+    "probs": [
+      0.460939,
+      0.297371,
+      0.24169
+    ],
+    "book": [
+      0.464441,
+      0.297533,
+      0.238026
+    ],
+    "published_at": "2026-11-27T21:14:44Z",
+    "hash": "f0c800a5287c0ff2b85524e78eb6a92527984c72222524ee9d2765ecf3621dc6",
+    "seq": 133
   }
 ]
